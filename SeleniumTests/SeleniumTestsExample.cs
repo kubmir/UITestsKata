@@ -46,6 +46,12 @@ namespace SeleniumTests
 
             shoppingCart.Click();
 
+
+            var cartItems = driver.FindElements(By.ClassName("inventory_item_name"));
+
+            Assert.AreEqual("Sauce Labs Backpack", cartItems[0].Text);
+            Assert.AreEqual("Sauce Labs Bike Light", cartItems[1].Text);
+
             var checkout = driver.FindElement(By.Name("checkout"));
 
             checkout.Click();
